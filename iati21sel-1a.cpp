@@ -1,5 +1,5 @@
 // If you build suffix array, number of different substrings is equal to n * (n - 1) / 2 - (sum of lcp[i])
-// I just support suffix array in online using lcp (to be more precise lcs, but idc)
+// I just support suffix array in online using lcp with binary search and hashes (to be more precise lcs, but idc)
 // For some reason hashes with modulo tled, so I swapped them to ull and got ac..
 
 #include <bits/stdc++.h>
