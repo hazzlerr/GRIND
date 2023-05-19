@@ -49,7 +49,7 @@ int inv(int a){
       return bpw(a, mod - 2);
 }
 
-const int N = 1010, K = 48;
+const int N = 1010, K = 55;
 
 int fa[2 * N], af[2 * N];
 
@@ -88,7 +88,7 @@ int C(int n, int k){
 inline int solve(){
       int n, k;
       cin >> n >> k;
-      if (k > K){
+      if (k >= K){
             cout << "0\n";
             return 0;
       }
