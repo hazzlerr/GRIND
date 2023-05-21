@@ -1,4 +1,3 @@
-// https://codeforces.com/contest/403/problem/D
 // It's easy to look at this problem using difference away
 // For contribution of b[i] - a[i] we can use dp, for the things between b[i] and a[i + 1] we can use combinatorics (stars and bars)
 
