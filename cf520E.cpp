@@ -1,4 +1,4 @@
-// when you understand that you can count contribution of every digit for fixed length this problem becomes trivial combinatorics
+// when you understand that you can count contribution of every digit for fixed length this problem becomes a trivial combinatorics
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
