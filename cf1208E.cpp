@@ -1,5 +1,3 @@
-// It's just a slightly tricky implementation
-
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
@@ -44,52 +42,39 @@ inline int solve(){
             int k; cin >> k;
             vec <ll> a(k);
             for (auto &i: a) cin >> i;
-            if (k == w){
-                  for (int i = 0; i < k; ++i){
-                        upd(i, i, a[i]);
+            vec <int> lg(k + 1);
+            for (int i = 2; i <= k; ++i){
+                  lg[i] = lg[i >> 1] + 1;
+            }
+            int z = lg[k] + 1;
+            vec <vec <ll>> sp(z, vec <ll> (k));
+            sp[0] = a;
+            for (int b = 1; b < z; ++b){
+                  for (int i = 0; i + (1 << b) <= k; ++i){
+                        sp[b][i] = max(sp[b - 1][i], sp[b - 1][i + (1 << b - 1)]);
                   }
             }
-            else if (2 * k > w){
-                  vec <int> lg(k + 1);
-                  for (int i = 2; i <= k; ++i){
-                        lg[i] = lg[i >> 1] + 1;
+            auto get = [&](int l, int r){
+                  int b = lg[r - l + 1];
+                  return max(sp[b][l], sp[b][r - (1 << b) + 1]);
+            };
+            auto work = [&](int i){
+                  int l = k - 1 - min(k - 1, w - 1 - i);
+                  int len = min({k - 1, i - l, k - 1 - l});
+                  ll mx = get(l, l + len);
+                  if (i >= k || i + k < w){
+                        umax(mx, 0LL);
                   }
-                  int z = lg[k] + 1;
-                  vec <vec <ll>> sp(z, vec <ll> (k));
-                  sp[0] = a;
-                  for (int b = 1; b < z; ++b){
-                        for (int i = 0; i + (1 << b) <= k; ++i){
-                              sp[b][i] = max(sp[b - 1][i], sp[b - 1][i + (1 << b - 1)]);
-                        }
-                  }
-                  auto get = [&](int l, int r){
-                        int b = lg[r - l + 1];
-                        return max(sp[b][l], sp[b][r - (1 << b) + 1]);
-                  };
-                  for (int i = 0; i < w; ++i){
-                        int l = k - 1 - min(k - 1, w - 1 - i);
-                        int len = min({k - 1, i - l, k - 1 - l});
-                        ll mx = get(l, l + len);
-                        if (i >= k || i + k < w){
-                              umax(mx, 0LL);
-                        }
-                        upd(i, i, mx);
-                  }
+                  upd(i, i, mx);
+            };
+            for (int i = 0; i < k; ++i){
+                  work(i);
             }
-            else{
-                  ll mx = 0;
-                  for (int i = 0; i < k; ++i){
-                        umax(mx, a[i]);
-                        upd(i, i, mx);
-                  }
-                  mx = 0;
-                  for (int i = 0; i < k; ++i){
-                        umax(mx, a[k - 1 - i]);
-                        upd(w - 1 - i, w - 1 - i, mx);
-                  }
-                  if (k <= w - 1 - k){
-                        upd(k, w - 1 - k, mx);
-                  }
+            for (int i = 0; i < k && w - 1 - i >= k; ++i){
+                  work(w - 1 - i);
+            }
+            if (k <= w - 1 - k){
+                  upd(k, w - 1 - k, max(0LL, get(0, k - 1)));
             }
       }
       partial_sum(all(ans), ans.begin());
