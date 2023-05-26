@@ -1,4 +1,4 @@
-// the most stupid problem i've ever seen
+// the dumbest problem i've ever seen
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
