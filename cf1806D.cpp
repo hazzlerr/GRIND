@@ -72,7 +72,7 @@ inline int solve(){
       vec <int> ans(n);
       ans[0] = 0;
       for (int i = 1; i <= n - 1; ++i){
-            // we insert i + 1 to any place we want
+            // we insert i to any place we want
             ans[i] = mul(ans[i - 1], i);
             if (!a[i]){
                   // we can get an edge 1 <- i + 1 only if a[i] = 0 and i is part of some rooted tree
