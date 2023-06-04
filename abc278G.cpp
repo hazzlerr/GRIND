@@ -1,6 +1,6 @@
 /*
   Time: 35:04
-  Num Submissions: 1
+  Num of Submissions: 1
   Learned: How to win Nim-game
   Analysis: I knew how to win Nim (or at least I thought that it was possible), 
             but I did not remember the "symmetry" strategy for l != r (even though I remember solving similiar problem)
