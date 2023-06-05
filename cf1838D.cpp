@@ -1,6 +1,6 @@
 /*
   Time: Didn't solve during contest
-  Num Submissions: 3
+  Num Submissions: 10
   Learned: THINK SIMPLER
   Analysis: I almost instantly understood the idea with "((" and "))" but for some reason couldn't think everything through carefully. 
             I guess I need to sleep more
