@@ -1,4 +1,4 @@
-// I think there was a smart sqrt solution, but I just did cd
+// I think there is a smart sqrt solution, but I just did cd
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
