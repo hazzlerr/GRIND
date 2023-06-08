@@ -54,13 +54,11 @@ inline int solve(){
                   continue;
             }
             vec <int> cnt(26);
-            int have = 0, big = 0;
+            int have = 0;
             for (int i = 0; i < 26; ++i){
                   cnt[i] = pf[i][r] - (l ? pf[i][l - 1] : 0);
                   have += cnt[i] != 0;
-                  big += cnt[i] > 1;
             }
-            int small = have - big;
             if (s[l] != s[r]){
                   cout << "Yes\n";
                   continue;
