@@ -1,5 +1,5 @@
 /*
-  Time: 58:17
+  Time: 3:45
   Num of Submissions: 1
   Analysis: I observed that from two different states we will probably get average, because it makes sense
   Rating: 2100
