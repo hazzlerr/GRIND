@@ -1,7 +1,7 @@
 /*
   Time: 6:34
   Num of Submissions: 1
-  Analysis: After a couple of simple obesrbations, this tasks boils down to merging scc's on vertical path (which can be done beatifully using dsu)
+  Analysis: After a couple of simple observations, this tasks boils down to merging scc's on vertical path (which can be done beatifully using dsu)
   Rating: 2094
 */
 #include <bits/stdc++.h>
