@@ -1,6 +1,6 @@
 /*
-  Time: 6:34
-  Num of Submissions: 2
+  Time: 9:56
+  Num of Submissions: 1
   Analysis: I know mobius function
   Rating: 2300
 */
