@@ -32,11 +32,13 @@ struct mint{
       }
 
       mint bpw(ll b) const {
+            bool fl = 0;
+            if (b < 0) fl = 1, b = -b;
             mint r = 1, a = *this;
             for (; b; b >>= 1, a *= a){
                   if (b & 1) r *= a;
             }
-            return r;
+            return fl ? r.inv() : r;
       }
       mint inv() const {
             uint32_t t = x, res = 1;
